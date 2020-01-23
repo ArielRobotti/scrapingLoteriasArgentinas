@@ -1,14 +1,15 @@
 import urllib.request as rq
 from bs4 import BeautifulSoup
 
-nacional=('https://www.nacionalquiniela.com/quiniela-nacional.php?del-dia=','Nac-')
+nacional=('https://www.nacionalquiniela.com/quiniela-nacional.php?del-dia=','Nac-')  
 provincia=('https://www.nacionalquiniela.com/quiniela-de-la-provincia.php?del-dia=','Prov-')
 tucuman=('https://www.nacionalquiniela.com/quiniela-tucuman.php?del-dia=','Tuc-')
 cordoba=('https://www.nacionalquiniela.com/quiniela-cordoba.php?del-dia=','Cor-')
 sanluis=('https://www.nacionalquiniela.com/quiniela-san-luis.php?del-dia=','SnL-')
 santafe=('https://www.nacionalquiniela.com/quiniela-santa-fe.php?del-dia=','StFe-')
+#el segundo elemento de las tuplas es para armar el nombre del archivo .txt de salida
 
-selecLot=provincia
+selecLot=nacional		#seleccione la loteria de la que quiera extraer los datos
 años=[2018,2019,2020]		#se recomienda dejar la lista años con un solo año cargado para evitar una sobrecarga en el sitio (supongo)
 	
 for aa in años:
