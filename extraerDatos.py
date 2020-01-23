@@ -10,7 +10,7 @@ santafe=('https://www.nacionalquiniela.com/quiniela-santa-fe.php?del-dia=','StFe
 #el segundo elemento de las tuplas es para armar el nombre del archivo .txt de salida
 
 selecLot=nacional		#seleccione la loteria de la que quiera extraer los datos
-años=[2018,2019,2020]		#se recomienda dejar la lista años con un solo año cargado para evitar una sobrecarga en el sitio (supongo)
+años=[2015,2016,2017,2018,2019,2020]		#se recomienda dejar la lista años con un solo año cargado para evitar una sobrecarga en el sitio (supongo)
 	
 for aa in años:
 	resultados=[]
@@ -22,13 +22,12 @@ for aa in años:
 			contador=1
 			for i in etiquetasTr:
 				tagTr=str(i)
-				sorteo=""
 				if '<tr class="danger"> <th class="res-sm text-center" colspan="2">' in tagTr and '</th> </tr>'in tagTr:
 					#es la linea correspondiente a los encabezados de las tablas (podemos verla haciendo print(tagTr))
 					#print(tagTr)
 					#cuando se encuentra esta linea se resetea a 1 el contador 
 					contador=1
-				elif '<tr> <td class="res-sm text-center"> 'in tagTr or 'tr class="info"> <td class="res-sm text-center"> 'in tagTr:
+				elif '<tr> <td class="res-sm text-center"> 'in tagTr or '<tr class="info"> <td class="res-sm text-center"> 'in tagTr:
 					#esta linea contiene la posicion y el numero ganador. La posicion queda establecida por el contador
 					#y solo se extrae el numero ganador
 					try:
